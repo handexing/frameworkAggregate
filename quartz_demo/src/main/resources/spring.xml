@@ -109,9 +109,9 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<!-- <bean id="springUtils" class="com.quartz.utils.SpringUtils" /> -->
+	<bean id="springUtils" class="com.quartz.utils.SpringUtils" />
 	
 	<!-- quartz -->
-	<!-- <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" /> -->
+	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" />
 	
 </beans>

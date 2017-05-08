@@ -20,6 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 import javax.transaction.Transactional;
 
 @Service
@@ -67,6 +69,11 @@ public class ScheduleJobService {
 		}
 	}
 
+	public void addTask(ScheduleJob job) {
+		job.setCreateTime(new Date());
+		scheduleJobDao.save(job);
+	}
+
 	/**
 	 * 更改任务状态
 	 * 
@@ -100,4 +107,37 @@ public class ScheduleJobService {
 		JobKey jobKey = JobKey.jobKey(scheduleJob.getJobName(), scheduleJob.getJobGroup());
 		scheduler.deleteJob(jobKey);
 	}
+
+	/**
+	 * 更改任务 cron表达式
+	 * 
+	 * @throws SchedulerException
+	 */
+	public void updateCron(Long jobId, String cron) throws SchedulerException {
+		ScheduleJob job = scheduleJobDao.findOne(jobId);
+		if (job == null) {
+			return;
+		}
+		job.setCronExpression(cron);
+		if (ScheduleJob.STATUS_RUNNING.equals(job.getJobStatus())) {
+			updateJobCron(job);
+		}
+		scheduleJobDao.save(job);
+	}
+
+	/**
+	 * 更新job时间表达式
+	 * 
+	 * @param scheduleJob
+	 * @throws SchedulerException
+	 */
+	public void updateJobCron(ScheduleJob scheduleJob) throws SchedulerException {
+		Scheduler scheduler = schedulerFactoryBean.getScheduler();
+		TriggerKey triggerKey = TriggerKey.triggerKey(scheduleJob.getJobName(), scheduleJob.getJobGroup());
+		CronTrigger trigger = (CronTrigger) scheduler.getTrigger(triggerKey);
+		CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(scheduleJob.getCronExpression());
+		trigger = trigger.getTriggerBuilder().withIdentity(triggerKey).withSchedule(scheduleBuilder).build();
+		scheduler.rescheduleJob(triggerKey, trigger);
+	}
+
 }

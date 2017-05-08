@@ -61,8 +61,7 @@
 						<td><a href="javascript:;" onclick="updateCron('${job.jobId}')">更新cron</a></td>
 					</tr>
 				</c:forEach>
-				
-				<!-- <tr>
+				<tr>
 					<td>n</td>
 					<td><input type="text" name="jobName" id="jobName"></input></td>
 					<td><input type="text" name="jobGroup" id="jobGroup"></input></td>
@@ -78,7 +77,7 @@
 					<td><input type="text" name="springId" id="springId"></input></td>
 					<td><input type="text" name="methodName" id="methodName"></input></td>
 					<td><input type="button" onclick="add()" value="保存" /></td>
-				</tr> -->
+				</tr>
 			</tbody>
 		</table>
 	</form>
@@ -120,7 +119,7 @@
 					async : false,
 					dataType : "JSON",
 					cache : false,
-					url : "${basePath}task/add.htm",
+					url : "add",
 					data : $("#addForm").serialize(),
 					success : function(data) {
 						if (data.flag) {
@@ -164,7 +163,7 @@
 					async : false,
 					dataType : "JSON",
 					cache : false,
-					url : "${basePath}task/updateCron.htm",
+					url : "updateCron",
 					data : {
 						jobId : jobId,
 						cron : cron
@@ -175,7 +174,6 @@
 						} else {
 							alert(data.msg);
 						}
-
 					}//end-callback
 				});//end-ajax
 			}
