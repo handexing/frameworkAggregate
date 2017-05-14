@@ -15,6 +15,22 @@ public class Flower {
 	private String url;
 	private String imgPath;
 	private String nick;
+	private String eng;
+	private String type;
+	private String genus;
+	private String blooming;
+
+	public String getBlooming() {
+		return blooming;
+	}
+
+	public String getEng() {
+		return eng;
+	}
+
+	public String getGenus() {
+		return genus;
+	}
 
 	public Long getId() {
 		return id;
@@ -32,8 +48,24 @@ public class Flower {
 		return nick;
 	}
 
+	public String getType() {
+		return type;
+	}
+
 	public String getUrl() {
 		return url;
+	}
+
+	public void setBlooming(String blooming) {
+		this.blooming = blooming;
+	}
+
+	public void setEng(String eng) {
+		this.eng = eng;
+	}
+
+	public void setGenus(String genus) {
+		this.genus = genus;
 	}
 
 	public void setId(Long id) {
@@ -52,13 +84,19 @@ public class Flower {
 		this.nick = nick;
 	}
 
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
 	@Override
 	public String toString() {
-		return "Flower [ name=" + name + ", url=" + url + ", imgPath=" + imgPath + ", nick=" + nick + "]";
+		return "Flower [id=" + id + ", name=" + name + ", url=" + url + ", imgPath=" + imgPath + ", nick=" + nick
+				+ ", eng=" + eng + ", type=" + type + ", genus=" + genus + ", blooming=" + blooming + "]";
 	}
+
 
 }
