@@ -198,12 +198,19 @@
 			<version>${quartz.version}</version>
 		</dependency> 
 		
+		<!-- jsoup -->
+		<dependency>
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.10.2</version>
+		</dependency>
 		
 		
 	</dependencies>
 
 	<modules>
 		<module>quartz_demo</module>
-	</modules>
+    <module>jsoup_demo</module>
+  </modules>
 
 </project>
