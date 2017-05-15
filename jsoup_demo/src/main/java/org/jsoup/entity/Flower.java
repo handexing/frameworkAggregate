@@ -20,12 +20,63 @@ public class Flower {
 	private String genus;
 	private String blooming;
 
+	private String introduce;// 介绍
+	private String morphological;// 形态特征
+	private String ecologicalHabit;// 生态习性
+	private String cultivationTechniques;// 栽培技术
+	private String reproductiveMode;// 繁殖方式
+	private String cutFlower;// 切花采收
+	private String diseaseControl;// 病害防治
+	private String distributionArea;// 分布区域
+	private String foodTherapy;// 食疗或药用价值
+	private String gardenUse;// 园林用途
+	private String functionUse;// 作用用途
+	private String culturalBackground;// 文化背景
+
+	// 描述实在是太多了...
+
 	public String getBlooming() {
 		return blooming;
 	}
 
+	public String getCultivationTechniques() {
+		return cultivationTechniques;
+	}
+
+	public String getCulturalBackground() {
+		return culturalBackground;
+	}
+
+	public String getCutFlower() {
+		return cutFlower;
+	}
+
+	public String getDiseaseControl() {
+		return diseaseControl;
+	}
+
+	public String getDistributionArea() {
+		return distributionArea;
+	}
+
+	public String getEcologicalHabit() {
+		return ecologicalHabit;
+	}
+
 	public String getEng() {
 		return eng;
+	}
+
+	public String getFoodTherapy() {
+		return foodTherapy;
+	}
+
+	public String getFunctionUse() {
+		return functionUse;
+	}
+
+	public String getGardenUse() {
+		return gardenUse;
 	}
 
 	public String getGenus() {
@@ -40,12 +91,24 @@ public class Flower {
 		return imgPath;
 	}
 
+	public String getIntroduce() {
+		return introduce;
+	}
+
+	public String getMorphological() {
+		return morphological;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public String getNick() {
 		return nick;
+	}
+
+	public String getReproductiveMode() {
+		return reproductiveMode;
 	}
 
 	public String getType() {
@@ -60,8 +123,44 @@ public class Flower {
 		this.blooming = blooming;
 	}
 
+	public void setCultivationTechniques(String cultivationTechniques) {
+		this.cultivationTechniques = cultivationTechniques;
+	}
+
+	public void setCulturalBackground(String culturalBackground) {
+		this.culturalBackground = culturalBackground;
+	}
+
+	public void setCutFlower(String cutFlower) {
+		this.cutFlower = cutFlower;
+	}
+
+	public void setDiseaseControl(String diseaseControl) {
+		this.diseaseControl = diseaseControl;
+	}
+
+	public void setDistributionArea(String distributionArea) {
+		this.distributionArea = distributionArea;
+	}
+
+	public void setEcologicalHabit(String ecologicalHabit) {
+		this.ecologicalHabit = ecologicalHabit;
+	}
+
 	public void setEng(String eng) {
 		this.eng = eng;
+	}
+
+	public void setFoodTherapy(String foodTherapy) {
+		this.foodTherapy = foodTherapy;
+	}
+
+	public void setFunctionUse(String functionUse) {
+		this.functionUse = functionUse;
+	}
+
+	public void setGardenUse(String gardenUse) {
+		this.gardenUse = gardenUse;
 	}
 
 	public void setGenus(String genus) {
@@ -76,12 +175,24 @@ public class Flower {
 		this.imgPath = imgPath;
 	}
 
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
+
+	public void setMorphological(String morphological) {
+		this.morphological = morphological;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public void setNick(String nick) {
 		this.nick = nick;
+	}
+
+	public void setReproductiveMode(String reproductiveMode) {
+		this.reproductiveMode = reproductiveMode;
 	}
 
 	public void setType(String type) {
