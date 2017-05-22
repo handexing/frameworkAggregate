@@ -16,6 +16,7 @@
 		<slf4j.version>1.7.2</slf4j.version>
 		<junit.version>4.10</junit.version>
 		<quartz.version>2.2.3</quartz.version>
+		<activiti-version>5.22.0</activiti-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -90,6 +91,11 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 		<!-- druid -->
 		 <dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -205,12 +211,27 @@
 		  <version>1.10.2</version>
 		</dependency>
 		
+		<!-- activiti -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti-version}</version>
+		</dependency>
 		
+        
 	</dependencies>
 
 	<modules>
 		<module>quartz_demo</module>
     <module>jsoup_demo</module>
+    <module>gecoo_demo</module>
+    <module>springBoot_demo</module>
+    <module>spring_demo</module>
   </modules>
 
 </project>
