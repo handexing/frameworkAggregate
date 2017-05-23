@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+           
+
+
+	<!-- 每个bean都有一个唯一的名称或者ID,以及一个完全限定的类名，用来让spring ioc容器对其实例化 -->
+	<!-- 使用 property元素 设置值 -->
+	<bean id="sequenceGenerator" class="org.handx.ioc.SequenceGenerator">
+		<property name="prefix" value="30" />
+		<property name="suffix" value="A" />
+		<property name="inital" value="100" />
+	</bean>
+	
+	<!-- xmlns:p="http://www.springframework.org/schema/p" 使用p元素达到最简 -->
+	<!-- <bean id="sequenceGenerator" class="org.handx.ioc.SequenceGenerator"
+	 p:prefix="30" p:suffix="A" p:inital="100"/> -->
+
+	<!-- 使用 constructor-arg元素 设置值 -->
+	<!-- <bean id="sequenceGenerator" class="org.handx.ioc.SequenceGenerator">
+		<constructor-arg value="30" />
+		<constructor-arg value="A" />
+		<constructor-arg value="100" />
+	</bean> -->
+	
+	<!-- 为bean配置集合可以给 value加类型使用type -->
+	<bean id="sequenceGenerator" class="org.handx.ioc.SequenceGenerator">
+		<property name="prefix" value="30" />
+		<property name="suffix" value="A" />
+		<property name="inital" value="100" />
+		<!-- list -->
+		<property name="lists">
+			<list>
+				<value>A</value>
+				<value>B</value>
+				<value>C</value>
+				<value>D</value>
+			</list>
+		</property>
+		<!-- 数组 -->
+		<property name="arrs">
+			<array>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+			</array>
+		</property>
+		<!-- set -->
+		<property name="sets">
+			<set>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+			</set>
+		</property>
+		<!-- map -->
+		<property name="maps">
+			<map>
+				<entry key="type" value="A"/>
+				<entry key="cate" value="B"/>
+			</map>
+		</property>
+		<!-- properties -->
+		<property name="properties">
+			<props>
+				<prop key="name">handx</prop>
+				<prop key="sex">man</prop>
+				<prop key="age">24</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
