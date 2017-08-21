@@ -236,6 +236,7 @@
 	    <module>jsoup_demo</module>
 	    <module>spring_demo</module>
 	    <module>mina_demo</module>
+    <module>restful_demo</module>
   </modules>
 
 </project>
